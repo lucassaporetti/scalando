@@ -3,26 +3,52 @@ import scala.io.StdIn.{readLine, readInt}
 
 object tests {
   def main(args: Array[String]): Unit = {
+  println("--------- SCALA CALCULATOR ---------")
 
-    var result = {
-      println("First Operand: ")
-      lazy val first_operand = readInt();
-      println("Second Operand: ")
-      lazy val second_operand = readInt();
-      first_operand + second_operand
+    def calculator(): Unit = {
+
+      var first_operand = {
+        println("First Operand: ");
+        readInt()
+      }
+
+      var second_operand = {
+        println("Second Operand: ");
+        readInt()
+      }
+
+      var operator = {
+        println("Operator [+ - * /]: ");
+        readLine()
+      }
+
+      if (operator == "+") {
+        var result = {first_operand + second_operand};
+        println(s"Result: $first_operand + $second_operand = $result")
+      }
+      if (operator == "-") {
+        var result = {first_operand - second_operand};
+        println(s"Result: $first_operand - $second_operand = $result")
+      }
+      if (operator == "*") {
+        var result = {first_operand * second_operand};
+        println(s"Result: $first_operand * $second_operand = $result")
+      }
+      if (operator == "/") {
+        var result = {first_operand / second_operand};
+        println(s"Result: $first_operand / $second_operand = $result")
+      }
     }
 
-    println(result)
+    var continue : String = "S"
+
+    while(continue != "N") {
+      calculator()
+      continue = readLine("Do you want to continue? [Y/N]: ").strip().toUpperCase()
+    }
 
     val name = readLine("What's your name? ")
-    println(s"Hello, \n$name!")
-
-    if (name == "Lucas") {
-      println("Lucasiiiii!")
-    }
-    else {
-      println("Não é o Lucasii!")
-    }
+    println(s"Good bye, $name!")
 
   }
 }
