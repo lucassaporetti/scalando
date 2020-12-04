@@ -42,10 +42,10 @@ object calculator {
 
     var continue : String = "S"
 
-    while(continue != "N") {
+    do {
       calculate()
       continue = readLine("Do you want to continue? [Y/N]: ").strip().toUpperCase()
-    }
+    } while(continue != "N")
 
     val name = readLine("What's your name? ")
     println(s"Good bye, $name!")
