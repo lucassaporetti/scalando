@@ -1,41 +1,41 @@
 package demo
-import scala.io.StdIn.{readLine, readInt}
+import scala.io.StdIn.{readLine, readInt, readFloat}
 
-object tests {
+object calculator {
   def main(args: Array[String]): Unit = {
   println("--------- SCALA CALCULATOR ---------")
 
-    def calculator(): Unit = {
+    def calculate(): Unit = {
 
-      var first_operand = {
-        println("First Operand: ");
-        readInt()
+      val first_operand = {
+        println("First Operand: ")
+        readFloat()
       }
 
-      var second_operand = {
-        println("Second Operand: ");
-        readInt()
+      val second_operand = {
+        println("Second Operand: ")
+        readFloat()
       }
 
-      var operator = {
-        println("Operator [+ - * /]: ");
+      val operator = {
+        println("Operator [+ - * /]: ")
         readLine()
       }
 
       if (operator == "+") {
-        var result = {first_operand + second_operand};
+        val result = {first_operand + second_operand}
         println(s"Result: $first_operand + $second_operand = $result")
       }
       if (operator == "-") {
-        var result = {first_operand - second_operand};
+        val result = {first_operand - second_operand}
         println(s"Result: $first_operand - $second_operand = $result")
       }
       if (operator == "*") {
-        var result = {first_operand * second_operand};
+        val result = {first_operand * second_operand}
         println(s"Result: $first_operand * $second_operand = $result")
       }
       if (operator == "/") {
-        var result = {first_operand / second_operand};
+        val result = {first_operand / second_operand}
         println(s"Result: $first_operand / $second_operand = $result")
       }
     }
@@ -43,7 +43,7 @@ object tests {
     var continue : String = "S"
 
     while(continue != "N") {
-      calculator()
+      calculate()
       continue = readLine("Do you want to continue? [Y/N]: ").strip().toUpperCase()
     }
 
