@@ -1,5 +1,5 @@
 package demo
-import scala.io.StdIn.{readLine, readInt, readFloat}
+import scala.io.StdIn.{readLine, readFloat}
 
 object calculator {
   def main(args: Array[String]): Unit = {
@@ -40,6 +40,9 @@ object calculator {
       }
     }
 
+    for (x <- 1 to 5) {
+      println("X using to " + x)
+    }
     var continue : String = "S"
 
     do {
