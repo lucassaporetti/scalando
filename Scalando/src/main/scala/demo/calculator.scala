@@ -22,10 +22,16 @@ object calculator {
         readFloat()
       }
 
-      def sum(first_operand: Float, second_operand: Float): Float = first_operand + second_operand
-      def subtract(first_operand: Float, second_operand: Float): Float = first_operand - second_operand
+      def sum(first_operand: Float, second_operand: Float): Float = {
+        return first_operand + second_operand
+      }
+
+      def subtract(first_operand: Float, second_operand: Float): Float =
+        first_operand - second_operand
+
       def multiply(first_operand: Float, second_operand: Float): Float = first_operand * second_operand
-      def divide(first_operand: Float, second_operand: Float): Float = first_operand / second_operand
+
+      def divide(first_operand: Float, second_operand: Float) = first_operand / second_operand
 
       if (operator == "+") {
         val result = sum(first_operand, second_operand)
