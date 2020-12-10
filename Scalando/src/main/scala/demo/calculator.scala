@@ -2,21 +2,29 @@ package demo
 import scala.io.StdIn.{readLine, readFloat}
 
 object calculator {
-  def main(args: Array[String]): Unit = {
-  println("--------- SCALA CALCULATOR ---------")
+
+  object math {
 
     def get_operation() {
 
       println("First Operand: ")
-      val first_operand = {readFloat()}
+      val first_operand = {
+        readFloat()
+      }
 
       println("Operator [+ - * /]: ")
-      val operator = {readLine()}
+      val operator = {
+        readLine()
+      }
 
       println("Second Operand: ")
-      val second_operand = {readFloat()}
+      val second_operand = {
+        readFloat()
+      }
 
-      def sum(first_operand: Float, second_operand: Float): Float = {return first_operand + second_operand}
+      def sum(first_operand: Float, second_operand: Float): Float = {
+        return first_operand + second_operand
+      }
 
       def subtract(first_operand: Float, second_operand: Float): Float = first_operand - second_operand
 
@@ -29,17 +37,22 @@ object calculator {
         case "-" => subtract(first_operand, second_operand)
         case "*" => multiply(first_operand, second_operand)
         case "/" => divide(first_operand, second_operand)
-        case _ => println("This is not a valid operator")}
+        case _ => println("This is not a valid operator")
+      }
 
       println(s"Result: $first_operand $operator $second_operand = $result")
     }
+  }
 
-    var continue : String = "S"
+  def main(args: Array[String]): Unit = {
+
+    var continue: String = ""
 
     do {
-      get_operation()
+      println("\n--------- SCALA CALCULATOR ---------")
+      math.get_operation()
       continue = readLine("Do you want to continue? [Y/N]: ").strip().toUpperCase()
-    } while(continue != "N")
+    } while (continue != "N")
 
     val name = readLine("What's your name? ")
     println(s"Good bye, $name!")
