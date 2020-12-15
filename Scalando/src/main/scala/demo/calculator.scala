@@ -18,7 +18,7 @@ object calculator {
       }
 
       println("Second Operand: ")
-      val second_operand = {
+      var second_operand = {
         readFloat()
       }
 
@@ -78,6 +78,6 @@ object calculator {
 //    val a_number = 18
 //
 //    a_number match{
-//      case 12 => println("Cirão da massa!!!")
-//      case 13 | 45 | 17 => println("Vagabonds!")
+//      case 12 => println("Doze!")
+//      case 13 | 45 | 17 => println("Outros!")
 //      case _ => println("Default value!")}
